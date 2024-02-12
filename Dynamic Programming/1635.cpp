@@ -1,9 +1,10 @@
-// Problem Link: https://cses.fi/problemset/task/1634
+// Problem Link: https://cses.fi/problemset/task/1635
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define i23 long long
+const int MOD = 1000000007;
 
 int main() {
     int n, tar;
@@ -12,14 +13,14 @@ int main() {
     for (auto &x : coins) {
         cin >> x;
     }
-    vector<i23> Dp(tar + 1, INT_MAX);
-    Dp[0] = 0;
+    vector<int> Cnt(tar + 1, 0);
+    Cnt[0] = 1;
     for (int x = 1; x <= tar; x++) {
         for (auto c : coins) {
             if (x - c >= 0) {
-                Dp[x] = min(Dp[x], Dp[x - c] + 1);
+                (Cnt[x] += Cnt[x - c]) %= MOD;
             }
         }
     }
-    cout << (Dp[tar] >= INT_MAX ? -1 : Dp[tar]) << '\n';
+    cout << Cnt[tar] << '\n';
 }
