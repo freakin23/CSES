@@ -21,8 +21,6 @@ void solve() {
 
 }
 int main() {
-    // int t;
-    // std::cin >> t;
     int t = 1;
     while (t--) {
         solve();
