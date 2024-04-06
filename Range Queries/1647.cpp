@@ -141,5 +141,5 @@ int main() {
         cin >> a >> b;
         cout << Seg.get(a - 1, b) << '\n';
     }
-
+    return 0;
 }
