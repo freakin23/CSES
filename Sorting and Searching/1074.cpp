@@ -2,8 +2,8 @@
 
 #include <bits/stdc++.h>
 #define i23 long long
-
-void solve() {
+ 
+int main() {
     int n;
     std::cin >> n;
     std::vector<int> Arr(n);
@@ -11,19 +11,17 @@ void solve() {
         std::cin >> x;
     }
     std::sort(begin(Arr), end(Arr));
-    int median = Arr[n / 2];
-    i23 res = 0;
+    int mid = 0;
+    if (n & 1) {
+        mid = Arr[n / 2];
+    } else {
+        mid = (Arr[n / 2] + Arr[n / 2 - 1]) / 2;
+    }
 
+    i23 res = 0;
     for (auto x : Arr) {
-        res += abs(median - x);
+        res += abs(x - mid);
     }
     std::cout << res << '\n';
-
-}
-int main() {
-    int t = 1;
-    while (t--) {
-        solve();
-    }
     return 0;
 }
