@@ -1,9 +1,5 @@
 #include <bits/stdc++.h>
 
-const int dx[4] = {-1, 1, 0, 0};
-const int dy[4] = {0, 0, -1, 1};
-const int MOD = 1'000'000'007;
-
 template<typename T>
 std::vector<T> factor(T x) {
     std::vector<T> res;
