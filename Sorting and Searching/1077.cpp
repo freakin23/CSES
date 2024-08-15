@@ -2,7 +2,9 @@
 #include<ext/pb_ds/assoc_container.hpp>
 using namespace std;
 using namespace __gnu_pbds;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> indexed_set;
+
+template <typename T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define i23 long long
  
@@ -15,8 +17,11 @@ void solve() {
     cin >> n >> k;
     vector<int> Arr(n);
     for (auto &x : Arr) {
-        
+        cin >> x;
     }
+
+    ordered_set<pair<int, int>> iset;
+
 }
  
 int main() {
