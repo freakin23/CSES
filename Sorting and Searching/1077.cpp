@@ -49,6 +49,24 @@ void solve() {
         }
     };
 
+    auto rem = [&] (pair<int, int> p) {
+        assert(oset.size() == k);
+        int idx = oset.order_of_key(p);
+        if (idx < mid) {
+            int median = oset.find_by_order(mid)->first;
+            l_sum -= p.first;
+            l_sum += median;
+            r_sum -= median;
+        } else {
+            r_sum -= p.first;
+        }
+        oset.erase(p);
+    };
+
+    for (int i = k - 1; i < n; i++) {
+        
+    }
+
 }
  
 int main() {
