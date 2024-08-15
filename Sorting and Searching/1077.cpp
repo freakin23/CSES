@@ -21,14 +21,14 @@ void solve() {
     }
 
     ordered_set<pair<int, int>> oset;
-    int mid = k / 2;
+    int med = k / 2;
     i23 l_sum = 0, r_sum = 0;
     for (int i = 0; i < k - 1; i++) {
         oset.insert({Arr[i], i});
     }
 
     for (int i = 0; i < k - 1; i++) {
-        if (i < mid) {
+        if (i < med) {
             l_sum += oset.find_by_order(i)->first;
         } else {
             r_sum += oset.find_by_order(i)->first; 
@@ -36,11 +36,10 @@ void solve() {
     }
 
     auto insrt = [&] (pair<int, int> p) {
-        assert(oset.size() == k - 1);
         oset.insert(p);
         int idx = oset.order_of_key(p);
-        if (idx < mid) {
-            int median = oset.find_by_order(mid)->first;
+        if (idx < med) {
+            int median = oset.find_by_order(med)->first;
             l_sum += p.first;
             l_sum -= median;
             r_sum += median;
@@ -50,10 +49,9 @@ void solve() {
     };
 
     auto rem = [&] (pair<int, int> p) {
-        assert(oset.size() == k);
         int idx = oset.order_of_key(p);
-        if (idx < mid) {
-            int median = oset.find_by_order(mid)->first;
+        if (idx < med) {
+            int median = oset.find_by_order(med)->first;
             l_sum -= p.first;
             l_sum += median;
             r_sum -= median;
@@ -65,9 +63,9 @@ void solve() {
 
     for (int i = k - 1; i < n; i++) {
         insrt({Arr[i], i});
-        i23 median = oset.find_by_order(mid)->first;
-        i23 low = (mid - 1) * median - l_sum;
-        i23 up = r_sum - median * (k - mid - 1);
+        i23 median = oset.find_by_order(med)->first;
+        i23 low = (med - 1) * median - l_sum;
+        i23 up = r_sum - median * (k - med - 1);
         cout << low + up << " \n"[i == n - 1];
 
         rem({Arr[i - k + 1], i - k + 1});
