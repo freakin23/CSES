@@ -64,9 +64,14 @@ void solve() {
     };
 
     for (int i = k - 1; i < n; i++) {
-        
-    }
+        insrt({Arr[i], i});
+        i23 median = oset.find_by_order(mid)->first;
+        i23 low = (mid - 1) * median - l_sum;
+        i23 up = r_sum - median * (k - mid - 1);
+        cout << low + up << " \n"[i == n - 1];
 
+        rem({Arr[i - k + 1], i - k + 1});
+    }
 }
  
 int main() {
