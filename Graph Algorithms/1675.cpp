@@ -2,7 +2,9 @@
 
 #include <bits/stdc++.h>
 using namespace std;
- 
+
+#define i23 long long
+
 class dsu {
     public:
     vector<int> parents;
@@ -41,7 +43,6 @@ void Dfs(int j, vector<int> &vis, vector<int> Adj[]) {
         }
     }
 }
-#define i23 long long
  
 int main() {
     ios_base :: sync_with_stdio(false);
