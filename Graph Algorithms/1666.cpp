@@ -2,7 +2,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#define i23 long long
 
 int main() {
     int n, m;
