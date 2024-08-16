@@ -35,4 +35,16 @@ class dsu {
         comp -= 1;
         return 1;
     }
+};
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    
+    comp = n;
+    dsu d(n + 1);
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+    }
 }
