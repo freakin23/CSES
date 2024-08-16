@@ -46,5 +46,8 @@ int main() {
     for (int i = 0; i < m; i++) {
         int a, b;
         cin >> a >> b;
+        d.join(a, b);
+        cout << comp << " " << mx << '\n';
     }
+    return 0;
 }
