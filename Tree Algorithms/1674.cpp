@@ -29,7 +29,7 @@ int main() {
 
     dfs(0, subtree);
     for (int i = 0; i < n; i++) {
-        std::cout << subtree[i] << " \n"[i == n - 1];
+        std::cout << subtree[i] - 1 << " \n"[i == n - 1];
     }
     return 0;
 }
