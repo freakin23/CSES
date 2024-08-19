@@ -3,20 +3,19 @@
 #include <bits/stdc++.h>
 
 const int N = 2e5;
-std::vector<int> adj[N], vis(N, 0);
-int maxD = -1, maxNode = -1;
+std::vector<int> adj[N];
+int maxD = 0, maxNode = 0;
 
-void dfs(int node, int d) {
-    vis[node] = 1;
-    if (d > maxD) {
-        maxNode = node;
-        maxD = d;
+void dfs(int node, int par, int d) {
+    for (auto u : adj[node]) {
+        if (u != par) {
+            dfs(u, node, d + 1);
+        }
     }
 
-    for (auto u : adj[node]) {
-        if (!vis[u]) {
-            dfs(u, d + 1);
-        }
+    if (d > maxD) {
+        maxD = d;
+        maxNode = node; 
     }
 }
 
@@ -36,12 +35,12 @@ int main() {
         adj[b].push_back(a);
     }
 
-    dfs(0, 1);
-    maxD = -1;
-    vis.assign(N, 0);
-    dfs(maxNode, 1);
+    dfs(0, -1, 0);
+    maxD = 0;
+    dfs(maxNode, -1, 0);
 
-    std::cout << maxD - 1 << '\n';
+    std::cout << maxD << '\n';
 
     return 0;
 }
+
