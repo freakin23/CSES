@@ -46,7 +46,7 @@ int main() {
     inverses(MOD);
     int n, m;
 	std::cin >> n >> m;
-	int res = choose(n + m - 1, m, MOD);
+	int res = choose(n + m - 1, m, MOD); // or choose(n + m - 1, m - 1, MOD)
 	std::cout << res << '\n';
     return 0;
 }
