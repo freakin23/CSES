@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 
-
-
 const int MOD = 1'000'000'007;
 
 void solve() {
@@ -43,7 +41,6 @@ int main() {
     std::cout.tie(0);
     std::cin.exceptions(std::ios::badbit|std::ios::failbit);
     int test = 1;
-    // std::cin >> test;
     while (test-- > 0) {
         solve();
     }
