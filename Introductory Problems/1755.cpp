@@ -36,7 +36,6 @@ void solve() {
         }
         std::cout << res << '\n';
     }
-
 }
 
 int32_t main() {
