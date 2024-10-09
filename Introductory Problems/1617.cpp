@@ -19,7 +19,6 @@ void solve() {
     int n;
     std::cin >> n;
     std::cout << modpow(2, n, 1000000007) << '\n';
-
 }
 
 int32_t main() {
