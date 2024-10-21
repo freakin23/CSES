@@ -1,3 +1,5 @@
+// Problem Link: https://cses.fi/problemset/task/1733
+
 #include <bits/stdc++.h>
 
 std::vector<int> z_function(std::string st) {
