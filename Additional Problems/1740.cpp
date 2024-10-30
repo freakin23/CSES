@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 #define i64 long long
 
-const int dx[4] = {-1, 1, 0, 0};
-const int dy[4] = {0, 0, -1, 1};
-const int MOD = 1'000'000'007;
-
 const int INF = 1e6 + 1;
 const int MAX_N = 1e5 + 1;
 const int MAX_D = 2e6 + 1;
