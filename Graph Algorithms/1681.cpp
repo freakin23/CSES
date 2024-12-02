@@ -54,7 +54,6 @@ int main() {
     std::cout.tie(0);
     std::cin.exceptions(std::ios::badbit|std::ios::failbit);
     int test = 1;
-    // std::cin >> test;
     while (test-- > 0) {
         solve();
     }
